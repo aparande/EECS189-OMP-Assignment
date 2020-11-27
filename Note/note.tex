@@ -104,7 +104,7 @@
   Because there are no delays, we don't need to compute the circular cross-correlation. 
   We only need to find the maximum, absolute dot product of each standard basis vector with the residual $\V{r}$. In other words, we need to find
   \[
-	i = \argmin_{i} |\langle \V{r}, \V{e_i} \rangle| = \argmax_{i}|\V{r}[i]|
+	i = \argmax_{i} |\langle \V{r}, \V{e_i} \rangle| = \argmax_{i}|\V{r}[i]|
   \]
   where $r_i$ is the residual for the ith datapoint.
   \begin{algorithm}[!h]	
@@ -113,7 +113,7 @@
 	\KwOut{Set of data indices $F$ where the outliers are}
 	$\V{r} = \V{y} - X(X^TX)^{-1}X^T\V{y}$, j = 1, A = X, F = $\emptyset$\;
 	\While{$j \leq k$ and $||\V{r}|| \geq \epsilon$}{
-	  i = $\argmin_i |\V{r}[i]|$\;
+	  i = $\argmax_i |\V{r}[i]|$\;
 	  $F = F \bigcup \{i\}$\;
 	  $A = [A | \V{e_i}]$\;
 	  $\V{x} = (A^TA)^{-1}A^T\V{y}$\;
