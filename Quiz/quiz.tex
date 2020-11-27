@@ -1,0 +1,144 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[lmargin=1in,rmargin=1in,tmargin=1in,bmargin=1in]{geometry}
+
+% -------------------
+% Packages
+% -------------------
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	enumerate,		    % Enumerate Environments
+	graphicx,			% Include Images
+	lastpage,			% Reference Lastpage
+	multicol,			% Use Multi-columns
+	multirow			% Use Multi-rows
+}
+
+
+% -------------------
+% Font
+% -------------------
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+
+% -------------------
+% Heading Commands
+% -------------------
+\newcommand{\class}{EECS 16ML}
+\newcommand{\term}{Fall 2020}
+\newcommand{\instructor}{Team RAAAK}
+\newcommand{\head}[2]{%
+\thispagestyle{empty}
+\vspace*{-0.5in}
+\noindent\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+	\textbf{Quiz Topic: Outlier Removal via OMP} \\
+	\textbf{\class:\; \term} & & \\
+	\textbf{\instructor}
+\end{tabular*} \\
+\rule[2ex]{\textwidth}{2pt} %
+}
+
+
+% -------------------
+% Commands
+% -------------------
+\newcounter{problem}
+\newcommand{\problem}{
+	\stepcounter{problem}%
+	\noindent \textbf{Problem \theproblem. }%
+}
+\newcommand{\pointproblem}[1]{
+	\stepcounter{problem}%
+	\noindent \textbf{Problem \theproblem.} (#1 points)\,%
+}
+\newcommand{\pspace}{\par\vspace{\baselineskip}}
+\newcommand{\ds}{\displaystyle}
+
+
+% -------------------
+% Header & Footer
+% -------------------
+\usepackage{fancyhdr}
+
+\fancypagestyle{pages}{
+	%Headers
+	\fancyhead[L]{}
+	\fancyhead[C]{}
+	\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+	%Footers
+	\fancyfoot[L]{}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{}
+\renewcommand{\footrulewidth}{0.0pt}
+}
+\headheight=0pt
+\footskip=14pt
+
+\pagestyle{pages}
+
+
+% -------------------
+% Content
+% -------------------
+\begin{document}
+\head{}
+
+
+% Question 1
+\problem Use the following matrix equation setup to run OMP for two iterations. Please box the intermediate and final residuals as well as the two components identified to have non-zero entries. For notational uniformity, denote each of the columns of 
+$\begin{bmatrix}
+        \boldsymbol{A} & \boldsymbol{I}
+\end{bmatrix}$ 
+as $\vec{c_{1}}$, $\vec{c_{2}}$, ..., $\vec{c_{8}}$.
+
+\begin{equation*}
+    \begin{bmatrix}
+        \boldsymbol{A} & \boldsymbol{I}
+    \end{bmatrix}\begin{bmatrix}
+        \vec{x} \\
+        \vec{f}
+    \end{bmatrix}
+     = \vec{y} \Rightarrow
+    \begin{bmatrix}
+         1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
+         1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+         1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+         1 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+         a \\ b \\ c \\ d \\ e \\ f \\ g \\ h
+    \end{bmatrix}
+    =\begin{bmatrix}
+         2 \\ 0 \\ 2 \\ 1
+    \end{bmatrix}
+\end{equation*}
+\vspace{9cm}
+
+% Question 2
+\problem Ignore the calculations done in the first problem. Suppose that a genie ran OMP for the problem above and told you the following about the sparse solution: %\vfill
+\begin{equation*}
+    \vec{x} = \begin{bmatrix}
+        \frac{1}{2} \\ 1 \\ -\frac{1}{2} \\ 1
+    \end{bmatrix}, \vec{f} = \begin{bmatrix}
+        0 \\ 10 \\ -\frac{1}{2} \\ 0
+    \end{bmatrix}
+\end{equation*}
+Interpret the results by identifying the outlier(s). Provide justification/explanation.
+\newpage
+
+
+% Question 3
+\problem In each of the three parts below, describe a potential stopping condition discussed in this course for OMP. In addition to naming the stopping condition, describe potential (dis)advantages and/or use cases. The order you list them in does not matter.
+	\begin{itemize}
+	\item Stopping Condition 1: \vspace{3cm}
+	\item Stopping Condition 2: \vspace{3cm}
+	\item Stopping Condition 3: \vspace{3cm}
+	\end{itemize} \vspace{6cm}
+
+
+
+
+
+\end{document}
