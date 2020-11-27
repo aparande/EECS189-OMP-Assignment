@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin} {-1in}
+
+% Style modifications
+\oddsidemargin  0.25in
+\evensidemargin 0.25in
+\textwidth      6.0in
+%\textheight     8.0in
+%\textheight     8.5in % Changed on 13 September 2012
+\textheight     9in % Changed on 3 October 2013
+\parskip        0.1in
+\parindent      0.0in
+\headheight     1.0in
+
+\headsep        .25in
+
+
+%\pagestyle      {headings}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amscd,verbatim,graphicx,fancyhdr,tikz}
+\usepackage{circuitikz}
+\usepackage{mathtools} %for minus plus sign alignment in matrices and vectors, added 13 Feb 2017
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{positioning}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16}
+
+\usepackage{palatino}
+%\usepackage{cmbright}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\usepackage{esdiff} % Derivatives
+\usepackage{cleveref}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage{tikz} %Can be used to draw Markov Chains or other Graphs
+% See http://www.freeminded.org/index.php/2010/05/a-markov-chain-in-tikz/
+\usetikzlibrary{arrows.meta}
+
+\newcommand\eqnnumber{\addtocounter{equation}{1}\tag{\theequation}} % Allows us to tag the last equation in an align
+
+
+%The accents package is included so I can type bold dots for time derivatives
+\usepackage{accents}
+\newcommand*{\dt}[1]{%
+\accentset{\mbox{\large\bfseries .}}{#1}}
+\newcommand*{\ddt}[1]{%
+\accentset{\mbox{\large\bfseries .\hspace{-0.25ex}.}}{#1}}
+
+
+
+%%% Some Mathematical Environmental Definitions
+\newcommand{\reals}{{\rm Reals}}
+\newcommand{\B}[1]{\mathbf{#1}}
+% the following line was added for the vector bold.
+\DeclareMathAlphabet{\V}{OML}{cmm}{b}{it}
+% Since the above gives a strange looking bold 0 (zero) we do this:
+% (To be used only in math mode)
+%\newcommand{\0}{\mbox{\bf 0}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\underscore}{\char`\_}
+\newcommand{\tildetext}{\char`\~}
+\newcommand{\defn}{\stackrel{\triangle}{=}}
+\newcommand{\cas}{\text{cas }}
+
+\newcommand{\var}{\textup{var}}
+\def\P{{\bf P}}
+\def\E{{\bf E}}
+\newcommand{\cov}{\textup{cov}}
+
+\def\E{{\bf E}}
+\def\P{{\bf P}}
+\def\var{\text{var}}
+\def\cov{\text{cov}}
+\def\e{\mathrm{e}}
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\Crefname{algocf}{Algorithm}{Algorithms}
+
+%%% ENTER COURSE NUMBER AND NAME HERE
+\newcommand{\coursenumber}{EECS~16ML}
+\newcommand{\coursename}{Practical Machine Learning}
+\newcommand{\coursetitle}{\coursenumber: \coursename}
+\newcommand{\docauthor}{Anmol Parande}
+
+%%% WHAT KIND OF DOCUMENT IS THIS?
+\newcommand{\documenttype}{note} % Other examples: exam, quiz, final, midterm, homework
+\newcommand{\titledocumenttype}{Note} % This is what appears in the document header
+
+% What is the document number? e.g., 5, if this is homework 5, or quiz 5, ...
+\newcommand{\documentnumber}{1}
+
+%%% Problem Prefix, e.g., HW1, or MT2, or F1
+\newcommand{\pp}{\documentinitials\documentnumber}
+
+%%% Document Headers
+\lhead{{\coursetitle} \\ \titledocumenttype \mbox{} \documentnumber \\ [-10pt]}
+\rhead{Fall 2020 \\ [-10pt]}
+
