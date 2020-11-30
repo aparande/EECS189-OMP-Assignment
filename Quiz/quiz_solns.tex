@@ -126,7 +126,7 @@
         \end{equation*}
         We first pick the vector that "explains" the largest component of $\vec{y}$, which translates to picking the vector with the largest dot product from above, $\vec{c_{1}}$.
 	\item \textbf{Solution}: Iteration 1 Residual: \\
-	    We then calculate $\vec{y_{1}}$, the component of $\vec{y}$ that is explained by $\vec{c_{1}}$, using least squares with $\vec{c_{1}}$ and $\vec{y}$. This is followed by calculating the residual, $\vec{e_{1}}$, that represents the leftover component of $\vec{y}$ not accounted for by $\vec{y_{1}}$.
+	    We then calculate $\vec{y_{1}}$, the component of $\vec{y}$ that is explained by $\vec{c_{1}}$, using least squares with $\vec{c_{1}}$ and $\vec{y}$. This is followed by calculating the residual, $\vec{r_{1}}$, that represents the leftover component of $\vec{y}$ not accounted for by $\vec{y_{1}}$.
 	    \begin{equation*}
             \vec{y_{1}} = \vec{c_{1}}(\vec{c_{1}}^T\vec{c_{1}})^{-1}\vec{c_{1}}^T\vec{y} = \begin{bmatrix}
                  1 \\ 1 \\ 1 \\ 1
@@ -134,25 +134,25 @@
             = \begin{bmatrix}
                  \frac{5}{4} \\ \frac{5}{4} \\ \frac{5}{4} \\ \frac{5}{4}
             \end{bmatrix} \Rightarrow
-            \vec{e_{1}} = \vec{y} - \vec{y_{1}} = 
+            \vec{r_{1}} = \vec{y} - \vec{y_{1}} = 
             \begin{bmatrix}
                 \frac{3}{4} \\ -\frac{5}{4} \\ \frac{3}{4} \\ -\frac{1}{4} 
             \end{bmatrix}
         \end{equation*}
 	\item \textbf{Solution}: Iteration 2 Component: \\
-	    We now repeat the process, using $\vec{e_{1}}$ to compute dot products with rather than the original vector $\vec{y}$.
+	    We now repeat the process, using $\vec{r_{1}}$ to compute dot products with rather than the original vector $\vec{y}$.
         \begin{equation*}
-            \langle\vec{e_{1}},\vec{c_{1}}\rangle = 5,        \langle\vec{e_{1}},\vec{c_{2}}\rangle = -\frac{2}{4},
-            \langle\vec{e_{1}},\vec{c_{3}}\rangle = \frac{2}{4},
-            \langle\vec{e_{1}},\vec{c_{4}}\rangle = \frac{6}{4},
-            \langle\vec{e_{1}},\vec{c_{5}}\rangle = \frac{3}{4},
-            \langle\vec{e_{1}},\vec{c_{6}}\rangle = -\frac{5}{4},
-            \langle\vec{e_{1}},\vec{c_{7}}\rangle = \frac{3}{4},
-            \langle\vec{e_{1}},\vec{c_{8}}\rangle = -\frac{1}{4}
+            \langle\vec{r_{1}},\vec{c_{1}}\rangle = 5,        \langle\vec{r_{1}},\vec{c_{2}}\rangle = -\frac{2}{4},
+            \langle\vec{r_{1}},\vec{c_{3}}\rangle = \frac{2}{4},
+            \langle\vec{r_{1}},\vec{c_{4}}\rangle = \frac{6}{4},
+            \langle\vec{r_{1}},\vec{c_{5}}\rangle = \frac{3}{4},
+            \langle\vec{r_{1}},\vec{c_{6}}\rangle = -\frac{5}{4},
+            \langle\vec{r_{1}},\vec{c_{7}}\rangle = \frac{3}{4},
+            \langle\vec{r_{1}},\vec{c_{8}}\rangle = -\frac{1}{4}
         \end{equation*}
         We choose to proceed with $\vec{c_{4}}$.
 	\item \textbf{Solution}: Iteration 2 Residual: \\
-	    We now calculate $\vec{y_{2}}$, the amount of $\vec{y}$ accounted for by both $\vec{c_{1}}$ and $\vec{c_{4}}$, and the resulting residual, $\vec{e_{2}}$. For notational convenience, we define the following:
+	    We now calculate $\vec{y_{2}}$, the amount of $\vec{y}$ accounted for by both $\vec{c_{1}}$ and $\vec{c_{4}}$, and the resulting residual, $\vec{r_{2}}$. For notational convenience, we define the following:
         \begin{equation*}
             \boldsymbol{A_{2}} = \begin{bmatrix}
                 \vec{c_{1}} && \vec{c_{4}}
@@ -160,7 +160,7 @@
             \vec{y_{2}} = \boldsymbol{A_{2}}(\boldsymbol{A_{2}}^T\boldsymbol{A_{2}})^{-1}\boldsymbol{A_{2}}^T\vec{y} = \begin{bmatrix}
                 2 \\ \frac{1}{2} \\ 2 \\ \frac{1}{2}
             \end{bmatrix} \Rightarrow
-            \vec{e_{2}} = \vec{y} - \vec{y_{2}} = \begin{bmatrix}
+            \vec{r_{2}} = \vec{y} - \vec{y_{2}} = \begin{bmatrix}
                 0 \\ -\frac{1}{2} \\ 0 \\ \frac{1}{2}
             \end{bmatrix} 
         \end{equation*}
