@@ -1,16 +1,14 @@
-# EECS189-OMP-Assignment
-- **Due December 1, 11:59 PM**  Create a GitHub repository containing the following:
-    - [ ] Documentation (slide-deck *and* a note for hypothetical students) both in **PDF form**
-    - [ ] A fully working coding assignment/project for students to do, along with a complete solution and a detailed description of the learning objectives being achieved, together with a narrative of how those objectives are being achieved by this assignment
-    - [ ] "Quiz questions” along with answers that could in principle be used to see if students have a passing-level understanding of their particular week’s learning objectives.
-    - [ ] A README explaining how to navigate your repository.
-    - [ ] **Submit the following [Google Form](https://forms.gle/heCg7zRmz8ZWePE26) containing the link to your GitHub repository. Save your Google Form response as a PDF and submit onto Gradescope.**
-- **Code Review** You will be paired with two other teams to review and improve each other's work.
-    - [ ] By **December 4, 11:59 PM**  You will be scheduled for 1.5-hour slots, paired with two other teams. You should review the other teams' projects and thoroughly running their code before this meeting. A part of your grade will be on how thoroughly you reviewed your peers' project. After the meeting, each team will be responsible for turning in a Google form discussing what was covered in the meeting:
-        - [ ] What were good and bad parts about your peers' projects?
-        - [ ] What were good and bad parts about your project?
-        - [ ] Note: You will have to provide a thorough review about your work and others' work to get full points.
-    - [ ] You should make fixes based on the comments you received by **December 10, 11:59 PM.**
-    - [ ] By **December 11, 11:59 PM** You will be responsible for updating your GitHub and submitting a 1-page short summary of improvements you made to your assignments, and another page providing a second peer review of your opponents work. What improvements do you observe? Do you see anything else they could do to improve upon their work?
+# EECS 189 - OMP For Linear Regression Educational Materials
 
-In addition to the above individual team deliverables, those involved in this project are expected to be involved in the larger conversation among the project teams as things get planned out. Overall, it should be a fun project that recognizes that there are diverse perspectives and skills that students in 189/289A bring to machine learning. The project generally emphasizes the programming and visualization side a bit more than the math side.
+This repository contains educational material for use in a hypothetical practical machine learning course. It covers Orthogonal Matching Pursuit (OMP) and its use for outlier removal in machine learning. It assumes that the reader is a UC Berkeley student who has taken EECS 16A (Designing Information Devices and Systems I).
+
+- The *Note* directory contains a PDF (and corresponding `.tex` file) of a theoretical explanation of OMP and outliers.
+- The *Slides* directory contains a PDF (and corresponding `.pptx` file) of a slide deck that could be used in a lecture to teach OMP for outlier removal.
+- The *Quiz* directory contains a Quiz with and without solutions in PDF form (and corresponding `.tex` files) which measures students' understanding of the concept.
+- The *Jupyter Assignment* directory contains an assignment in the form of a Jupyter Notebook which students can fill out to use OMP in practice on real datasets. It contains the [UCI Forest Fire Dataset](https://archive.ics.uci.edu/ml/datasets/forest+fires) in CSV format as well as the Boston Housing Dataset.
+
+## Learning Objective
+After going through the materials in our repository, students should understand the theoretical underpinnings of OMP (primarily from their EECS 16A background) and how it situates itself in the context of Machine Learning. They will also understand out outliers can skew regression and why removing these outliers will fix the issue. Finally, students will understand how to program OMP and how to apply it to real data sets, including how to choose the correct number of outliers and other hyper-parameters for OMP.
+
+*This repository was developed for EECS 189 (Introduction to Machine Learning) at Berkeley for a final project.*
+
