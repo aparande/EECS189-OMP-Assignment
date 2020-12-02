@@ -13,6 +13,7 @@
 	multicol,			% Use Multi-columns
 	multirow			% Use Multi-rows
 }
+\graphicspath{ {./Images/} }
 
 
 % -------------------
@@ -43,10 +44,11 @@
 % -------------------
 % Commands
 % -------------------
+\newcommand{\prob}{\noindent\textbf{Problem. }}
 \newcounter{problem}
 \newcommand{\problem}{
 	\stepcounter{problem}%
-	\noindent \textbf{Problem \theproblem. }%
+	\noindent \textbf{Part \theproblem. }%
 }
 \newcommand{\pointproblem}[1]{
 	\stepcounter{problem}%
@@ -83,22 +85,18 @@
 % Content
 % -------------------
 \begin{document}
-\head{}
+\textbf{EECS 16ML Quiz: Outlier Removal via OMP} \pspace
 
 
 % Question 1
-\problem Use the following matrix equation setup to run OMP for two iterations. Please box the intermediate and final residuals as well as the two components identified to have non-zero entries. For notational uniformity, denote each of the columns of 
-$\begin{bmatrix}
-        \boldsymbol{A} & \boldsymbol{I}
-\end{bmatrix}$ 
-as $\vec{c_{1}}$, $\vec{c_{2}}$, ..., $\vec{c_{8}}$.
+\problem Use the following matrix equation setup to run OMP for two iterations. Please box the intermediate and final residuals as well as the two components identified to have non-zero entries.
 
 \begin{equation*}
     \begin{bmatrix}
         \boldsymbol{A} & \boldsymbol{I}
     \end{bmatrix}\begin{bmatrix}
         \vec{x} \\
-        \vec{f}
+        \vec{\epsilon}
     \end{bmatrix}
      = \vec{y} \Rightarrow
     \begin{bmatrix}
@@ -114,31 +112,59 @@ as $\vec{c_{1}}$, $\vec{c_{2}}$, ..., $\vec{c_{8}}$.
          2 \\ 0 \\ 2 \\ 1
     \end{bmatrix}
 \end{equation*}
-\vspace{9cm}
 
+\begin{enumerate}
+    \item Iteration 1 Component: \vspace{3cm}
+	\item Iteration 1 Residual: \vspace{3cm}
+	\item Iteration 2 Component: \vspace{3cm}
+	\item Iteration 2 Residual: \vspace{3cm}
+\end{enumerate} 
+
+\newpage
 % Question 2
 \problem Ignore the calculations done in the first problem. Suppose that a genie ran OMP for the problem above and told you the following about the sparse solution: %\vfill
 \begin{equation*}
     \vec{x} = \begin{bmatrix}
         \frac{1}{2} \\ 1 \\ -\frac{1}{2} \\ 1
-    \end{bmatrix}, \vec{f} = \begin{bmatrix}
+    \end{bmatrix}, \vec{\epsilon} = \begin{bmatrix}
         0 \\ 10 \\ -\frac{1}{2} \\ 0
     \end{bmatrix}
 \end{equation*}
 Interpret the results by identifying the outlier(s). Provide justification/explanation.
-\newpage
+\vspace{5cm}
 
 
 % Question 3
 \problem In each of the three parts below, describe a potential stopping condition discussed in this course for OMP. In addition to naming the stopping condition, describe potential (dis)advantages and/or use cases. The order you list them in does not matter.
-	\begin{itemize}
-	\item Stopping Condition 1: \vspace{3cm}
-	\item Stopping Condition 2: \vspace{3cm}
-	\item Stopping Condition 3: \vspace{3cm}
-	\end{itemize} \vspace{6cm}
+	\begin{enumerate}
+	\item Stopping Condition 1: 
+	    \begin{enumerate}[(a)]
+	        \item Description:\vspace{1cm}
+	        \item Use Cases: \vspace{1cm}
+	    \end{enumerate}
+	\item Stopping Condition 2: 
+	    \begin{enumerate}[(a)]
+	        \item Description: \vspace{1cm}
+	        \item Use Cases:\vspace{1cm}
+	    \end{enumerate}
+	\item Stopping Condition 3: 
+	    \begin{enumerate}[(a)]
+	        \item Description:\vspace{1cm}
+	        \item Use Cases:\vspace{1cm}
+	    \end{enumerate}
+	\end{enumerate} \vspace{6cm}
+
+\problem Observe the graph below and describe what happens to the training and validation errors as the number of OMP iterations increases in the each of the two labeled regions.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.3]{graph}
+\end{figure}
+    \begin{enumerate}
+        \item Region A, Training Error \vspace{2cm}
+        \item Region A, Validation Error \vspace{2cm}
+        \item Region B, Training Error \vspace{2cm}
+        \item Region B, Validation Error \vspace{2cm}
+    \end{enumerate}
 
 
-
-
-
-\end{document}
+\end{document}			
